@@ -1,0 +1,39 @@
+<div class="border rounded p-2 m-2">
+  <ng-form class="float-right mr-2" [formGroup]="activeFormGroup">
+    <label class="p-2">Active</label>
+    <input type="checkbox" formControlName="active">
+  </ng-form>
+  <h1>Live player</h1>
+
+  <p>This section lets you control whether you want to be able to control your bot</p>
+
+  <table class="table">
+    <caption>Live vision of the actions sent to the game</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Throttle</th>
+      <th scope="col">Steer</th>
+      <th scope="col">Pitch</th>
+      <th scope="col">Yaw</th>
+      <th scope="col">Roll</th>
+      <th scope="col">Jump</th>
+      <th scope="col">Boost</th>
+      <th scope="col">Handbrake</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Value</th>
+      <td>{{ this.actions[0] }}</td>
+      <td>{{ this.actions[1] }}</td>
+      <td>{{ this.actions[2] }}</td>
+      <td>{{ this.actions[3] }}</td>
+      <td>{{ this.actions[4] }}</td>
+      <td>{{ this.actions[5] }}</td>
+      <td>{{ this.actions[6] }}</td>
+      <td>{{ this.actions[7] }}</td>
+    </tr>
+  </tbody>
+  </table>
+</div>

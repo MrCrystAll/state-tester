@@ -1,0 +1,44 @@
+<ng-container>
+<header class="container-fluid d-flex justify-content-around m-2 p-2">
+
+        <a type="button" class="btn btn-outline-secondary" routerLink="/" routerLinkActive>
+            <div class="d-flex">
+                <img class="pr-2 m-auto" alt="rl" width="24px" src="assets/icons/icons8-home.svg"/>
+                <p class="m-auto">Home</p>
+            </div>
+        </a>
+
+        <a type="button" class="btn btn-outline-secondary" routerLink="/reward-logging" routerLinkActive>
+            <div class="d-flex">
+                <img class="pr-2 m-auto" alt="rl" width="24px" src="assets/icons/icons8-livre-50.png"/>
+                <p class="m-auto">Reward logging</p>
+            </div>
+        </a>
+
+        <a type="button" class="btn btn-outline-secondary" routerLink="/live-playing" routerLinkActive>
+            <div class="d-flex">
+                <img class="pr-2 m-auto" alt="rl" width="24px" src="assets/icons/icons8-manette-50.png"/>
+                <p class="m-auto">Live player</p>
+            </div>
+        </a>
+
+        <a type="button" class="btn btn-outline-secondary" routerLink="/clip-managing" routerLinkActive>
+            <div class="d-flex">
+                <img class="pr-2 m-auto" alt="rl" width="24px" src="assets/icons/icons8-appareil-photo-50.png"/>
+                <p class="m-auto">Clip Manager</p>
+            </div>
+        </a>
+
+        <a type="button" class="btn btn-outline-secondary" routerLink="/settings" routerLinkActive>
+            <div class="d-flex">
+                <img class="pr-2 m-auto" alt="setting" width="24px" src="assets/icons/icons8-settings.svg"/>
+                <p class="m-auto">Settings</p>
+            </div>
+        </a>
+    </header>
+
+    <router-outlet ></router-outlet>
+    <footer class="footer p-2 bg-light">
+        <p>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+    </footer>
+</ng-container>
