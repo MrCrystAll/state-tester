@@ -1,10 +1,11 @@
-import { createReducer, createSelector } from "@ngrx/store";
-import { StateModel } from "./store.model";
+import { createSelector } from "@ngrx/store";
+import { ActionModel, StateModel } from "./store.model";
 
-const selectState = (state: StateModel) => state
+const selectState = (state: StateModel) => state.actionModel
 
 export const selectActions = createSelector(
     selectState,
-    (state: StateModel) => state.actions
-    
+    (state: ActionModel) => {
+        return state?.actions
+    }
 )

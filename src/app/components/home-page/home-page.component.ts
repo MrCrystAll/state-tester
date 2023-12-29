@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CarState } from '../../store/store.model';
 
 @Component({
   selector: 'app-home-page',
@@ -10,4 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class HomePageComponent {
 
+  constructor(){
+  }
 }
