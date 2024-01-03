@@ -6,13 +6,14 @@ import {setActions} from "../../store/store.actions";
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import { Observable } from 'rxjs';
 import { selectActions } from '../../store/store.selectors';
+import { ActivationComponent } from "../common/activation/activation.component";
 
 @Component({
-  selector: 'app-live-playing',
-  standalone: true,
-  imports: [CommonModule, StoreModule, ReactiveFormsModule],
-  templateUrl: './live-playing.component.html',
-  styleUrl: './live-playing.component.css'
+    selector: 'live-playing',
+    standalone: true,
+    templateUrl: './live-playing.component.html',
+    styleUrl: './live-playing.component.css',
+    imports: [CommonModule, StoreModule, ReactiveFormsModule, ActivationComponent]
 })
 export class LivePlayingComponent {
   $actions: Observable<number[]> = this._store.select(selectActions)
@@ -24,10 +25,6 @@ export class LivePlayingComponent {
   })
 
   constructor(protected readonly _store: Store<StateModel>) {
-    this._store.dispatch(setActions({inputs: [1, 0, 1, 0, 1, 0, 1, 0]}))
-    this.$actions.subscribe((actions: number[]) => {
-      console.log("Got new actions!: " + Object.getOwnPropertyNames(actions));
     
-    })
   }
 }

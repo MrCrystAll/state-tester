@@ -1,0 +1,4 @@
+<ng-form class="border rounded p-2" [formGroup]="activationForm">
+    <input type="checkbox" formControlName="active" for="activation-label" (change)="onActivationChange()">
+    <label id="activation-label" class="p-2">Active</label>
+</ng-form>
