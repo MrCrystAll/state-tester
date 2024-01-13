@@ -7,15 +7,17 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { actionReducer } from './store/store.reducers';
 import { provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes), 
+    provideRouter(routes),
     provideClientHydration(),
-    provideStore(), 
+    provideStore(),
     provideState('actions', actionReducer),
-    provideStoreDevtools({ maxAge: 25}),
+    provideStoreDevtools({ maxAge: 25 }),
     importProvidersFrom(HttpClientModule),
-    provideHttpClient(withFetch())
-  ]
+    provideHttpClient(withFetch()),
+    provideAnimations()
+]
 };

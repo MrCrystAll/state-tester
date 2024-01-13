@@ -16,6 +16,12 @@
         <hr>
     }
     
+    <ng-container *ngComponentOutlet="
+        current_popup.component;
+        inputs: current_popup.inputs;
+  ">
+
+    </ng-container>
     
     <div *ngFor="let subcommand of info.subcommands" class="d-flex py-1">
         <div class="dropdown">
@@ -28,8 +34,7 @@
                         <div class="d-flex">
                             <a class="dropdown-item my-1" id="{{item.name}}" (click)="send_to_api($event)">{{item.name.charAt(0).toUpperCase() + item.name.slice(1).replace("_", " ")}}</a>
                             <p class="px-2 my-auto">{{item.key.value}}</p>
-                        </div>
-                        
+                        </div>  
                     }
                 </div>
             </div>
