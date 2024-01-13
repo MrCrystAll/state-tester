@@ -1,0 +1,40 @@
+<h2>Commands</h2>
+
+<div class="container-fluid p-1">
+@if(info === undefined){
+    <p>No info</p>
+}
+@else {
+    @for (item of info.commands; track item) {
+        <div class="d-flex">
+            <button class="btn btn-primary my-1" id="{{item.name}}" (click)="send_to_api($event)">{{item.name.charAt(0).toUpperCase() + item.name.slice(1).replace("_", " ")}}</button>
+            <p class="px-2 my-auto">Key : {{item.key.value}}</p>
+        </div>
+      }
+    
+    @if(this.display){
+        <hr>
+    }
+    
+    
+    <div *ngFor="let subcommand of info.subcommands" class="d-flex py-1">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" data-toggle="collapse" attr.data-target="#{{subcommand.component}}" role="button" aria-expanded="false" attr.aria-controls="{{subcommand.component}}">
+              {{subcommand.component}}
+            </button>
+            <div class="collapse card" id="{{subcommand.component}}">
+                <div>
+                    @for (item of subcommand.commands; track item) {
+                        <div class="d-flex">
+                            <a class="dropdown-item my-1" id="{{item.name}}" (click)="send_to_api($event)">{{item.name.charAt(0).toUpperCase() + item.name.slice(1).replace("_", " ")}}</a>
+                            <p class="px-2 my-auto">{{item.key.value}}</p>
+                        </div>
+                        
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}
+</div>  

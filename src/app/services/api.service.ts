@@ -14,4 +14,8 @@ export class ApiService {
   getCallbacksInfos(): Promise<any>{
     return lastValueFrom(this.client.get(SERVER_URL + CALLBACK_CONTEXT))
   }
+
+  postCommandExec(info: any){
+    return lastValueFrom(this.client.post(SERVER_URL + CALLBACK_CONTEXT, info));
+  }
 }

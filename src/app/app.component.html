@@ -10,7 +10,7 @@
         </a>
 
         @for (callback of callbacks; track [callback.name, callback.path]) {
-            <a type="button" class="btn btn-outline-secondary" routerLink="/{{callback.path}}">
+            <a type="button" class="btn btn-outline-secondary" routerLink="/{{callback.path}}" [state]="callback">
                 <div class="d-flex">
                     <p class="m-auto">{{callback.name}}</p>
                 </div>

@@ -9,9 +9,14 @@ export class ApiMapperService {
   constructor() { }
 
   mapObjectToCallbackInfo(value: any): CallbackInfo{
+    if(value === undefined) return new CallbackInfo();
     let elt: CallbackInfo = {
+      id: value.id,
       name: value.name,
-      path: value.path
+      path: value.path,
+      commands: value.commands,
+      subcommands: value.subcommands,
+      callback: value.callback
     }
     return elt
   }
