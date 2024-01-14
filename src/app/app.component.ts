@@ -6,12 +6,13 @@ import {setActions} from "./store/store.actions";
 import { ApiService } from './services/api.service';
 import { CallbackInfo } from './model/api.model';
 import { ApiMapperService } from './services/api-mapper.service';
+import { WebsocketService } from './services/websocket.service';
 
 let binding: boolean = false
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, StoreModule, RouterModule],
+  imports: [CommonModule, RouterOutlet, StoreModule, RouterModule, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit{
     this.infoField = ""
     this._initCallbacks()
     
+    //this._webSocket.sendMessage(JSON.stringify({data: "wow"}))
   }
 
   private _initCallbacks(){

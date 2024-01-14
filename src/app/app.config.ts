@@ -7,6 +7,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { actionReducer } from './store/store.reducers';
 import { provideClientHydration } from '@angular/platform-browser';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { SocketIoModule } from 'ngx-socket-io';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideState('actions', actionReducer),
     provideStoreDevtools({ maxAge: 25}),
     importProvidersFrom(HttpClientModule),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    importProvidersFrom(SocketIoModule)
   ]
 };
